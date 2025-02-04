@@ -1,0 +1,38 @@
+float x, y, vx, vy, g;
+
+void setup(){
+  size(800, 600);
+  x = width / 2;
+  y = 20;
+  vx = 0;
+  vy = 0; 
+  g = 2;
+}
+
+void draw(){
+   background(0);
+   circle(x, y, 80);
+   stroke(128);
+   line(0, height * 7 / 8, width, height * 7 / 8);
+   fill(255, 0, 0);
+   vy += g;
+   x += vx;
+   y += vy;
+   if (y+20 >= height * 7 / 8){ 
+     vy = -1 * vy * 0.8;
+   }
+}
+
+class Ball{
+  float x, y, radius, vx, vy, ax, ay;  
+  int fill_color;
+  
+  public Ball(float x, float y, float radius, float, vx, float vy, float ax, float ay, int fill_color){
+    this.x = x;
+    this.y = y;
+    this.radius = radius;
+    this.vx = vx;
+    this.vy = vy;
+    this.fill_color = fill_color;
+  }
+}
